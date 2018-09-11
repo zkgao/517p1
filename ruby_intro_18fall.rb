@@ -76,7 +76,7 @@ class Book
         cents_str += "0"
       end
       dollar, cent = dollar_str.to_i, cents_str.to_i
-      ans="only "
+      ans=""
       if dollar>1
          ans+="#{dollar} dollars"
       elsif dollar==1
@@ -93,30 +93,11 @@ class Book
         end
         ans+="1 cent"
       end
+      ans+=" only"
       ans
     end
 end
 
 
-#################### test#########################
-correct = 0
-wrong = 0
-unique_array([1,2,3,-4,-5,1,3,2]) == [1,2,3,-4,-5] ? correct+=1 : wrong+=1
-print "#{correct} #{wrong}\n"
-two_sum?([-1,-2,4,4],2) == true ? correct+=1 : wrong+=1
-print "#{correct} #{wrong}\n"
-group_anagrams(['elbow','cried','below','cider']) == [['elbow','below'],['cried','cider']] ? correct+=1 : wrong+=1
-print "#{correct} #{wrong}\n"
-palindrome?("pop") == true ? correct+=1 : wrong+=1
-print "#{correct} #{wrong}\n"
-remove_and_append_vowels("pray") == 'prya' ? correct+=1 : wrong+=1
-print "#{correct} #{wrong}\n"
-highest_frequency_word("She says she got married.") == 'she' ? correct+=1 : wrong+=1
-print "#{correct} #{wrong}\n"
-b2 = Book.new("The Great Gatsby", 1.01)
-#b2.formatted_price=="only 17 dollars and 0 cents" ? correct+=1 : wrong+=1
+b2 = Book.new("The Great Gatsby", 113.01)
 p b2.formatted_price
-p group_anagrams([])
-p two_sum?([],3)
-
-print "#{correct} #{wrong}\n"
